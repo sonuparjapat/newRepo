@@ -118,43 +118,54 @@ export default function Home() {
     setValuetoShow(data[0])
   }
 
-  return (
-    <>
-      <Box w={"100%"} margin={"auto"} mt={50} display={"flex"} justifyContent={"center"} flexWrap="wrap">
-        <div style={{ margin: "10px" }}>
-          <Button onClick={() => handlefunction(1)}>{showValue ? "NEXT" : "START"} {" "}
-            <span role="img" aria-label="rocket">🚀</span>
-          </Button>
-        </div>
-        {count === data.length - 1 ?
+  return   (
+      <div style={{
+        backgroundImage: `url('https://c4.wallpaperflare.com/wallpaper/887/641/129/smile-happiness-ball-backlight-wallpaper-preview.jpg')`, // Replace 'background-image.jpg' with the path to your background image
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        minHeight: '100vh',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'column'
+      }}>
+        <Box w={"50%"} margin={"auto"} mt={100} display={"flex"} justifyContent={"center"} flexWrap="wrap">
           <div style={{ margin: "10px" }}>
-            <Button backgroundColor={"green"} onClick={() => setShowAnswer(true)} textColor={"white"}>
-              GET ANSWER {" "}
-              <span role="img" aria-label="target">🎯</span>
+            <Button onClick={() => handlefunction(1)}>{showValue ? "NEXT" : "START"} {" "}
+              <span role="img" aria-label="rocket">🚀</span>
             </Button>
-          </div> : ""}
-        <div style={{ margin: "10px" }}>
-          <Button isDisabled={count >= 1 ? false : true} backgroundColor={"red"} onClick={() => {
-            setCount(0)
-            setShowAnswer(false)
-            setValuetoShow(data[0])
-          }} textColor={"white"}>
-            Restart {" "}
-            <span role="img" aria-label="refresh">🔄</span>
-          </Button>
-        </div>
-      </Box>
-      <Box textAlign="center" mt="20px" fontSize="20px">
-        {showValue ? (
-          <>
-            <span role="img" aria-label="star">⭐️</span>
-            <span style={{ marginLeft: "5px", marginRight: "5px",fontWeight:"bold" }}>{valuetoshow}</span>
-            <span role="img" aria-label="star">⭐️</span>
-          </>
-        ) : ""}
-      </Box>
-      {staringopen ? <BasicUsage openModal={staringopen} closeModal={setStartingOpen} setShowValue={setShowValue} modalheader={startingmodalheader} modalbody={startingmodalbody} modalfooter={startingmodalfooter} handleopen={handlestartingopen} handleclose={handleclose} /> : ""}
-      {showAnswer ? <BasicUsage openModal={showAnswer} closeModal={setShowAnswer} setShowValue={setShowValue} modalheader={answermodalheader} modalbody={answermodalbody} modalfooter={answermodalfooter} handleopen={handleansweropen} handleclose={handleanswerclose} /> : ""}
-    </>
-  )
+          </div>
+          {count === data.length - 1 ?
+            <div style={{ margin: "10px" }}>
+              <Button backgroundColor={"green"} onClick={() => setShowAnswer(true)} textColor={"white"}>
+                GET ANSWER {" "}
+                <span role="img" aria-label="target">🎯</span>
+              </Button>
+            </div> : ""}
+          <div style={{ margin: "10px" }}>
+            <Button isDisabled={count >= 1 ? false : true} backgroundColor={"red"} onClick={() => {
+              setCount(0)
+              setShowAnswer(false)
+              setValuetoShow(data[0])
+            }} textColor={"white"}>
+              Restart {" "}
+              <span role="img" aria-label="refresh">🔄</span>
+            </Button>
+          </div>
+        </Box>
+        <Box textAlign="center" mt="20px" fontSize="20px" position={"absolute"} top={{base:60,md:40,lg:40,xl:40}} >
+          {showValue ? (
+            <>
+              <span role="img" aria-label="star">⭐️</span>
+              <span  style={{ marginLeft: "5px", marginRight: "5px",fontWeight:"bold",color:"white" }}>{valuetoshow}</span>
+              <span role="img" aria-label="star">⭐️</span>
+            </>
+          ) : ""}
+        </Box>
+        <span style={{ color: "white", marginBottom: "0" }}>@copyrights sonu_verma 2024</span>
+        {staringopen ? <BasicUsage openModal={staringopen} closeModal={setStartingOpen} setShowValue={setShowValue} modalheader={startingmodalheader} modalbody={startingmodalbody} modalfooter={startingmodalfooter} handleopen={handlestartingopen} handleclose={handleclose} /> : ""}
+        {showAnswer ? <BasicUsage openModal={showAnswer} closeModal={setShowAnswer} setShowValue={setShowValue} modalheader={answermodalheader} modalbody={answermodalbody} modalfooter={answermodalfooter} handleopen={handleansweropen} handleclose={handleanswerclose} /> : ""}
+      </div>
+    );
+  
 }
