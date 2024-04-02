@@ -148,7 +148,7 @@ export default function Home() {
         {showValue ? (
           <>
             <span role="img" aria-label="star">⭐️</span>
-            <span style={{ marginLeft: "5px", marginRight: "5px" }}>{valuetoshow}</span>
+            <span style={{ marginLeft: "5px", marginRight: "5px",fontWeight:"bold" }}>{valuetoshow}</span>
             <span role="img" aria-label="star">⭐️</span>
           </>
         ) : ""}
