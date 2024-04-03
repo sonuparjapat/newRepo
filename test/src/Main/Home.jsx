@@ -6,10 +6,10 @@ export default function Home() {
   const [answerbutton, setAnswerbutton] = useState(false)
   const [staringopen, setStartingOpen] = useState(false)
   const [showValue, setShowValue] = useState(false)
-  const [data, setData] = useState(["Please click on next..", "1. Kya", "2. App", "3. Jante", "4. Ho", "5. Is", "6. Duniya", "7. Me", "8. Sbse", "9. Khubsurat", "10. Smart", "11. Cool", "12. kon", "13. Hai"])
+  const [data, setData] = useState(["Please click on next..", "1. Kya", "2. App", "3. Jante", "4. Ho", "5. Is", "6. Duniya", "7. Me", "8. Sbse","9.Jyada", "10. Khubsurat", "11. Smart", "12. Cool", "13. kon", "14. Hai"])
   const [count, setCount] = useState(0)
   const [valuetoshow, setValuetoShow] = useState(data[count])
-  const [answer] = useState("5,6,7,8,9,10,11,2,13")
+  const [answer] = useState("5,6,7,8,9,10,11,12,2,14")
   const [showAnswer, setShowAnswer] = useState(false)
 
   useEffect(() => {
@@ -153,7 +153,7 @@ export default function Home() {
             </Button>
           </div>
         </Box>
-        <Box textAlign="center" mt="20px" fontSize="20px" position={"absolute"} top={{base:60,md:40,lg:40,xl:40}} >
+        <Box textAlign="center" mt="20px" fontSize="20px" position={"absolute"} top={{base:80,md:40,lg:60,xl:60}} >
           {showValue ? (
             <>
               <span role="img" aria-label="star">⭐️</span>
