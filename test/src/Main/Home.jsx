@@ -1,7 +1,7 @@
 import { Box, Button, ModalHeader, useDisclosure } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import { BasicUsage } from './Modal/Modal'
-
+import "./mystyles.css"
 export default function Home() {
   const [answerbutton, setAnswerbutton] = useState(false)
   const [staringopen, setStartingOpen] = useState(false)
@@ -154,6 +154,16 @@ export default function Home() {
           </div>
         </Box>
         <Box textAlign="center" mt="20px" fontSize="20px" position={"absolute"} top={{base:80,md:40,lg:60,xl:60}} >
+        <Box
+    className={`value-card ${showValue ? 'show' : ''}`}
+    // Apply CSS class based on showValue state
+    boxShadow="0 4px 6px rgba(0, 0, 0, 0.1)" // Add box shadow
+    backgroundColor="" // Add white background color
+    borderRadius="8px" // Add border radius for rounded corners
+    padding="10px" // Add padding for better spacing
+    transition="box-shadow 0.3s ease-in-out" 
+    textColor={"black"}// Apply CSS class based on showValue state
+      >
           {showValue ? (
             <>
               <span role="img" aria-label="star">⭐️</span>
@@ -161,6 +171,7 @@ export default function Home() {
               <span role="img" aria-label="star">⭐️</span>
             </>
           ) : ""}
+        </Box>
         </Box>
         <span style={{ color: "white", marginBottom: "0" }}>@copyrights sonu_verma 2024</span>
         {staringopen ? <BasicUsage openModal={staringopen} closeModal={setStartingOpen} setShowValue={setShowValue} modalheader={startingmodalheader} modalbody={startingmodalbody} modalfooter={startingmodalfooter} handleopen={handlestartingopen} handleclose={handleclose} /> : ""}
